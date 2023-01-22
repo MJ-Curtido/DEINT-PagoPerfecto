@@ -59,7 +59,8 @@
                     VerticalOptions="Center"/>
 
                 <Entry
-                    x:Name="cuenta"/>
+                    x:Name="cuenta"
+                    TextChanged="cuenta_TextChanged"/>
             </HorizontalStackLayout>
 
             <HorizontalStackLayout
@@ -76,21 +77,28 @@
                     <HorizontalStackLayout>
                         <Button
                             Text="10%"
-                            FontSize="17"/>
+                            FontSize="17"
+                            x:Name="btn10"
+                            Clicked="btn10_Clicked"/>
                         <Button
                             Text="15%"
-                            FontSize="17"/>
+                            FontSize="17"
+                            x:Name="btn15"
+                            Clicked="btn15_Clicked"/>
                         <Button
                             Text="20%"
-                            FontSize="17"/>
+                            FontSize="17"
+                            x:Name="btn20"
+                            Clicked="btn20_Clicked"/>
                     </HorizontalStackLayout>
 
                     <Slider
-                        Minimum="10"
+                        Minimum="0"
                         Maximum="20"
-                        IsEnabled="False"
+                        Value="0"
                         x:Name="sliderPropina"
-                        MinimumTrackColor="Purple"/>
+                        MinimumTrackColor="Purple"
+                        ValueChanged="sliderPropina_ValueChanged"/>
                 </VerticalStackLayout>
             </HorizontalStackLayout>
 
@@ -106,19 +114,31 @@
 
                 <HorizontalStackLayout>
                     <Button
-                            Text="-"
-                            FontSize="17"/>
+                        Text="-"
+                        FontSize="17"
+                        x:Name="btnMenos"
+                        Clicked="btnMenos_Clicked"/>
 
                     <Label
                         Text="1"
                         FontSize="17"
-                        VerticalOptions="Center"/>
+                        VerticalOptions="Center"
+                        x:Name="numPersonas"/>
                     
                     <Button
-                            Text="+"
-                            FontSize="17"/>
+                        Text="+"
+                        FontSize="17"
+                        x:Name="btnMas"
+                        Clicked="btnMas_Clicked"/>
                 </HorizontalStackLayout>
             </HorizontalStackLayout>
+
+            <Label
+                Text=""
+                TextColor="Red"
+                FontSize="17"
+                HorizontalOptions="Center"
+                x:Name="error"/>
         </VerticalStackLayout>
     </ScrollView>
 
